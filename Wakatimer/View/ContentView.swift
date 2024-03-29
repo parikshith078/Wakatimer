@@ -12,19 +12,19 @@ struct ContentView: View {
     
     @StateObject var apiData = NetworkViewModel()
     
+    @State private var activeTab: Tab = .dashboard
+    
     var body: some View {
-        Text("Fetch Coding Statistics")
-            .onTapGesture {
-                Task {
-                    print("Starting fetching...")
-                    try await apiData.fetchData()
-                }
-            }
-        List {
-            ForEach(apiData.heartbeats){ item in
-                Text(item.project)
-            }
+        TabView(selection: $activeTab) {
+            Dashboard()
+                .tag(Tab.dashboard)
+                .tabItem { Tab.dashboard.tabContent }
+            
+            Settings()
+                .tag(Tab.settings)
+                .tabItem { Tab.settings.tabContent }
         }
+        
     }
 }
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B93788E72BB63506004B1455 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93788E62BB63506004B1455 /* Tabs.swift */; };
+		B93788EA2BB63587004B1455 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93788E92BB63587004B1455 /* Dashboard.swift */; };
+		B93788EC2BB63598004B1455 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93788EB2BB63598004B1455 /* Settings.swift */; };
 		B9B286D52BB59FF50059C3F3 /* NetworkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B286D42BB59FF50059C3F3 /* NetworkViewModel.swift */; };
 		B9B286D72BB5A0050059C3F3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B286D62BB5A0050059C3F3 /* NetworkService.swift */; };
 		B9B286D92BB5A0870059C3F3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B286D82BB5A0870059C3F3 /* NetworkError.swift */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B93788E62BB63506004B1455 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
+		B93788E92BB63587004B1455 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		B93788EB2BB63598004B1455 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B9B286D42BB59FF50059C3F3 /* NetworkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewModel.swift; sourceTree = "<group>"; };
 		B9B286D62BB5A0050059C3F3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		B9B286D82BB5A0870059C3F3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -40,6 +46,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B93788E82BB63563004B1455 /* TabViews */ = {
+			isa = PBXGroup;
+			children = (
+				B93788E92BB63587004B1455 /* Dashboard.swift */,
+				B93788EB2BB63598004B1455 /* Settings.swift */,
+			);
+			path = TabViews;
+			sourceTree = "<group>";
+		};
 		B9B286D02BB59EED0059C3F3 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +66,7 @@
 		B9B286D12BB59EF80059C3F3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B93788E82BB63563004B1455 /* TabViews */,
 				B9DF72D82BB0421A008AE746 /* ContentView.swift */,
 			);
 			path = View;
@@ -115,6 +131,7 @@
 			children = (
 				B9DF72E52BB04B5D008AE746 /* Heartbeat.swift */,
 				B9B286D82BB5A0870059C3F3 /* NetworkError.swift */,
+				B93788E62BB63506004B1455 /* Tabs.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -189,10 +206,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B93788E72BB63506004B1455 /* Tabs.swift in Sources */,
 				B9B286D72BB5A0050059C3F3 /* NetworkService.swift in Sources */,
+				B93788EA2BB63587004B1455 /* Dashboard.swift in Sources */,
 				B9DF72E62BB04B5D008AE746 /* Heartbeat.swift in Sources */,
 				B9DF72D92BB0421A008AE746 /* ContentView.swift in Sources */,
 				B9B286D92BB5A0870059C3F3 /* NetworkError.swift in Sources */,
+				B93788EC2BB63598004B1455 /* Settings.swift in Sources */,
 				B9DF72D72BB0421A008AE746 /* WakatimerApp.swift in Sources */,
 				B9B286D52BB59FF50059C3F3 /* NetworkViewModel.swift in Sources */,
 			);
