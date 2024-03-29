@@ -6,10 +6,29 @@
     //
 
 import SwiftUI
+import SwiftData
 
 struct Dashboard: View {
+    @Environment(\.modelContext) var modelContext
     @AppStorage("API_KEY") var apiKey = ""
-    var viewModle = NetworkViewModel()
+    @Query var apiData: [WakatimeApiData]
+    @State var currentDayData: WakatimeApiData? = nil
+    
+    func getCurrentDayData(data: [WakatimeApiData]) -> WakatimeApiData {
+        for obj in data {
+            if obj.day.onlyDate! == Date().onlyDate! {
+//                print("Got old data")
+//                print("Data length \(apiData.count)")
+                return obj
+            }
+        }
+        let newData = WakatimeApiData()
+        modelContext.insert(newData)
+//        print("New data created")
+//        print("Data length \(apiData.count)")
+        return newData
+    }
+
     var body: some View {
         ZStack {
             Color(.black)
@@ -29,11 +48,25 @@ struct Dashboard: View {
                     .bold()
                 Text("2h 50m")
                     .font(.system(size: 50))
+                
+                List {
+                    ForEach(apiData) { item in
+                        Text(item.day.customFormatedDate)
+                            .foregroundStyle(.black)
+                    }
+                }
             }
             .foregroundStyle(.white)
             .fontDesign(.rounded)
         }
+        .onAppear {
+            currentDayData = getCurrentDayData(data: apiData)
+            Task {
+//                currentDayData?.heartbeats = try await 
+            }
+        }
     }
+    
 }
 
 #Preview {

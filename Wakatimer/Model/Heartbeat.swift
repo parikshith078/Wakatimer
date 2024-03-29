@@ -6,13 +6,18 @@
     //
 
 import Foundation
+import SwiftData
 
-struct Heartbeat: Codable, Identifiable {
-    var id: Double {
-        return time
+@Model
+class Heartbeat: Codable {
+    var time: Double
+    var project: String
+    var duration: Double
+    
+    init(time: Double = 0, project: String = "", duration: Double = 0) {
+        self.time = time
+        self.project = project
+        self.duration = duration
     }
-    let time: Double
-    let project: String
-    let duration: Double
 }
 

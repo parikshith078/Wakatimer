@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct WakatimerApp: App {
@@ -13,5 +14,6 @@ struct WakatimerApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: WakatimeApiData.self)
     }
 }
