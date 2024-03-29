@@ -1,5 +1,5 @@
     //
-    //  Dashboard.swift
+    //  RingView.swift
     //  Wakatimer
     //
     //  Created by Parikshith Palegar on 29/03/24.
@@ -7,9 +7,7 @@
 
 import SwiftUI
 
-struct Dashboard: View {
-    @AppStorage("API_KEY") var apiKey = ""
-    var viewModle = NetworkViewModel()
+struct RingView: View {
     var body: some View {
         ZStack {
             Color(.black)
@@ -25,7 +23,7 @@ struct Dashboard: View {
             }
             .padding(30)
             VStack {
-                Text("Today")
+                Text("Coding time")
                     .bold()
                 Text("2h 50m")
                     .font(.system(size: 50))
@@ -33,9 +31,10 @@ struct Dashboard: View {
             .foregroundStyle(.white)
             .fontDesign(.rounded)
         }
+        
     }
 }
 
 #Preview {
-    ContentView()
+    RingView()
 }

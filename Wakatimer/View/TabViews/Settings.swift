@@ -12,16 +12,22 @@ struct Settings: View {
     @AppStorage("API_KEY") var apiKey = ""
     var body: some View {
         VStack(spacing: 20) {
-            TextField("API key", text: $key)
-                .textFieldStyle(.roundedBorder)
-                .autocorrectionDisabled()
-            
-            Button("Save") {
-                apiKey = key.lowercased()
+            ZStack {
+                Color(.black)
+                    .ignoresSafeArea()
+                VStack(spacing: 30) {
+                    TextField("API key", text: $key)
+                        .textFieldStyle(.roundedBorder)
+                        .autocorrectionDisabled()
+                    
+                    Button("Save") {
+                        apiKey = key.lowercased()
+                    }
+                }
+                .padding(20)
             }
             
         }
-        .padding()
     }
 }
 
