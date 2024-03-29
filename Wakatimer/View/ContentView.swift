@@ -10,8 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var apiData = NetworkViewModel()
-    
+    @ObservedObject var networkModel = NetworkViewModel()
     @State private var activeTab: Tab = .dashboard
     
     var body: some View {
@@ -19,7 +18,12 @@ struct ContentView: View {
             Dashboard()
                 .tag(Tab.dashboard)
                 .tabItem { Tab.dashboard.tabContent }
-            
+                .onAppear {
+                    Task {
+                        try await networkModel.fetchData()
+                    }
+                }
+
             Settings()
                 .tag(Tab.settings)
                 .tabItem { Tab.settings.tabContent }

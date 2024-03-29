@@ -6,9 +6,14 @@
     //
 
 import Foundation
+import SwiftUI
 
 class NetworkViewModel: ObservableObject {
     @Published var heartbeats = [Heartbeat]()
+    @AppStorage("todayStats",
+                store: UserDefaults(suiteName: "group.me.parikshith.One-tap"))
+    private var todayStats = ""
+    
     let service = NetworkService()
     
     
@@ -16,7 +21,7 @@ class NetworkViewModel: ObservableObject {
         print("DEBUG: data = (self.apiData) started...")
         DispatchQueue.main.async {
             Task {
-                self.heartbeats = try await self.service.fetchData()
+                self.todayStats = try await self.service.fetchTodayStats()
             }
         }
     }
