@@ -9,15 +9,18 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
+    var data = DataService()
+    
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), emoji: "😀")
+        SimpleEntry(date: Date(), todayStats: data.getStatus())
     }
     
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), emoji: "😀")
+        let entry = SimpleEntry(date: Date(), todayStats: data.getStatus())
         completion(entry)
     }
     
+    // TODO: Edit time line
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
         
@@ -25,7 +28,7 @@ struct Provider: TimelineProvider {
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, emoji: "😀")
+            let entry = SimpleEntry(date: entryDate, todayStats: data.getStatus())
             entries.append(entry)
         }
         
@@ -36,7 +39,7 @@ struct Provider: TimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let emoji: String
+    let todayStats: String
 }
 
 struct Today_StatsEntryView : View {
@@ -59,7 +62,7 @@ struct Today_StatsEntryView : View {
             VStack {
                 Text("Today")
                     .bold()
-                Text("2h 50m")
+                Text(entry.todayStats)
                     .font(.system(size: 20))
             }
             .foregroundStyle(.white)
@@ -93,6 +96,6 @@ struct Today_Stats: Widget {
 #Preview(as: .systemSmall) {
     Today_Stats()
 } timeline: {
-    SimpleEntry(date: .now, emoji: "😀")
-    SimpleEntry(date: .now, emoji: "🤩")
+    SimpleEntry(date: .now, todayStats: DataService().getStatus())
+//    SimpleEntry(date: .now, emoji: "🤩")
 }

@@ -16,6 +16,8 @@
 		B93788FB2BB6451B004B1455 /* Today_Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93788FA2BB6451B004B1455 /* Today_Stats.swift */; };
 		B93788FD2BB6451D004B1455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B93788FC2BB6451D004B1455 /* Assets.xcassets */; };
 		B93789012BB6451D004B1455 /* Today StatsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B93788F12BB6451B004B1455 /* Today StatsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B93789132BB793C5004B1455 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93789122BB793C5004B1455 /* DataService.swift */; };
+		B93789162BB79961004B1455 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93789152BB79961004B1455 /* Date.swift */; };
 		B9B286D52BB59FF50059C3F3 /* NetworkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B286D42BB59FF50059C3F3 /* NetworkViewModel.swift */; };
 		B9B286D72BB5A0050059C3F3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B286D62BB5A0050059C3F3 /* NetworkService.swift */; };
 		B9B286D92BB5A0870059C3F3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B286D82BB5A0870059C3F3 /* NetworkError.swift */; };
@@ -63,6 +65,8 @@
 		B93788FE2BB6451D004B1455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B937890F2BB7929B004B1455 /* Wakatimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wakatimer.entitlements; sourceTree = "<group>"; };
 		B93789102BB792AD004B1455 /* Today StatsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Today StatsExtension.entitlements"; sourceTree = "<group>"; };
+		B93789122BB793C5004B1455 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		B93789152BB79961004B1455 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		B9B286D42BB59FF50059C3F3 /* NetworkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewModel.swift; sourceTree = "<group>"; };
 		B9B286D62BB5A0050059C3F3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		B9B286D82BB5A0870059C3F3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 		B93788F72BB6451B004B1455 /* Today Stats */ = {
 			isa = PBXGroup;
 			children = (
+				B93789112BB793AE004B1455 /* Model */,
 				B93789072BB64547004B1455 /* Widget */,
 				B93789062BB64534004B1455 /* View */,
 				B93788FC2BB6451D004B1455 /* Assets.xcassets */,
@@ -137,6 +142,22 @@
 				B93788F82BB6451B004B1455 /* Today_StatsBundle.swift */,
 			);
 			path = Widget;
+			sourceTree = "<group>";
+		};
+		B93789112BB793AE004B1455 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B93789122BB793C5004B1455 /* DataService.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B93789142BB79951004B1455 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B93789152BB79961004B1455 /* Date.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		B9B286D02BB59EED0059C3F3 /* App */ = {
@@ -195,6 +216,7 @@
 		B9DF72D52BB0421A008AE746 /* Wakatimer */ = {
 			isa = PBXGroup;
 			children = (
+				B93789142BB79951004B1455 /* Extension */,
 				B937890F2BB7929B004B1455 /* Wakatimer.entitlements */,
 				B9B286D02BB59EED0059C3F3 /* App */,
 				B9B286D32BB59F060059C3F3 /* Service */,
@@ -327,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B93788F92BB6451B004B1455 /* Today_StatsBundle.swift in Sources */,
+				B93789132BB793C5004B1455 /* DataService.swift in Sources */,
 				B93788FB2BB6451B004B1455 /* Today_Stats.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +364,7 @@
 				B9DF72E62BB04B5D008AE746 /* Heartbeat.swift in Sources */,
 				B9DF72D92BB0421A008AE746 /* ContentView.swift in Sources */,
 				B9B286D92BB5A0870059C3F3 /* NetworkError.swift in Sources */,
+				B93789162BB79961004B1455 /* Date.swift in Sources */,
 				B93788EC2BB63598004B1455 /* Settings.swift in Sources */,
 				B9DF72D72BB0421A008AE746 /* WakatimerApp.swift in Sources */,
 				B9B286D52BB59FF50059C3F3 /* NetworkViewModel.swift in Sources */,

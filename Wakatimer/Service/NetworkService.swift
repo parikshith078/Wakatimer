@@ -13,7 +13,8 @@ struct NetworkService {
     @AppStorage("API_KEY") var apiKey = ""
     
     private var url : String {
-        return "https://wakatime.com/api/v1/users/current/durations?date=2024-03-29&api_key=\(apiKey)"
+        let today = Date().apiRequestFormat
+        return "https://wakatime.com/api/v1/users/current/durations?date=\(today)&api_key=\(apiKey)"
     }
     
     func fetchData() async throws -> [Heartbeat] {

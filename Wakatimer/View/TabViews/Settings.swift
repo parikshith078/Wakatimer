@@ -24,10 +24,6 @@ struct Settings: View {
                     Button("Save") {
                         apiKey = key.lowercased()
                     }
-                    
-                    List {
-                        
-                    }
                 }
                 .padding(20)
             }

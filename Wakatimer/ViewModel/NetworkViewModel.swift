@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import WidgetKit
 
 class NetworkViewModel: ObservableObject {
     @Published var heartbeats = [Heartbeat]()
@@ -21,7 +22,13 @@ class NetworkViewModel: ObservableObject {
         print("DEBUG: data = (self.apiData) started...")
         DispatchQueue.main.async {
             Task {
-                self.todayStats = try await self.service.fetchTodayStats()
+                do {
+                    self.todayStats = try await self.service.fetchTodayStats()
+                    print("After fetch: \(self.todayStats)")
+                    WidgetCenter.shared.reloadTimelines(ofKind: "Today_Stats")
+                } catch {
+                    print("Error: \(error)")
+                }
             }
         }
     }
